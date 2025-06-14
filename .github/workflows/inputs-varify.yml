@@ -7,7 +7,7 @@ on:
         description: '環境変数入力'
         required: false
         default: 'env1'
-        type: string
+        type: environment
       boolean_input:
         description: 'ブール値入力'
         required: true
