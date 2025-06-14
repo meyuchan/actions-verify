@@ -10,7 +10,7 @@ on:
         type: string
 
 jobs:
-  print-tag:
+  echo_input:
     runs-on: ubuntu-latest
     steps:
       - name: echo input
