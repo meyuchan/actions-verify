@@ -1,0 +1,13 @@
+name: Simple Failing Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  simple_failing_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple failing step
+        run: |
+          echo "このステップは失敗します..."
+          exit 1
