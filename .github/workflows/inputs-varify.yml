@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: echo input
         run: |
-          echo ${{ github.vars.TEST }}
+          echo ${{ vars.TEST }}
