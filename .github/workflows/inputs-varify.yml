@@ -4,38 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       environment_input:
-        description: '環境変数入力'
+        description: '環境を選択してください'
         required: false
         default: 'env1'
         type: environment
-      boolean_input:
-        description: 'ブール値入力'
-        required: true
-        default: false
-        type: boolean
-      choice_input:
-        description: '選択肢入力'
-        required: true
-        default: 'option1'
-        type: choice
-        options:
-          - 'option1'
-          - 'option2'
-          - 'option3'
-      number_input:
-        description: '数値入力'
-        required: false
-        default: 10
-        type: number
 
 jobs:
   echo_input:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment_input }}
     steps:
       - name: echo input
         run: |
-          echo "Environment Input: ${{ github.event.inputs.environment_input }}"
-          echo "Boolean Input: ${{ github.event.inputs.boolean_input }}"
-          echo "Choice Input: ${{ github.event.inputs.choice_input }}"
-          echo "Number Input: ${{ github.event.inputs.number_input }}"
-          echo "All Inputs: ${{ toJson(github.event.inputs) }}"
+          echo ${{ vars.TEST }}
