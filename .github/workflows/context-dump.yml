@@ -2,6 +2,17 @@ name: GitHub Actions Context Dump
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * *"
+  push:
+    branches:
+      - main
+  issues:
+    types:
+      - opened
+  label:
+    types:
+      - created
 
 jobs:
   context-dump:
