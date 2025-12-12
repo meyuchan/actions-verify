@@ -11,3 +11,6 @@ jobs:
         run: |
           echo "Dumping GitHub Context:"
           echo "${{ toJson(github) }}"
+
+      - name: Dump GitHub Event Context
+        run: echo "${{ toJson(github.event)}}"
